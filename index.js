@@ -1,3 +1,5 @@
+const API_KEY = "4ab24c7ad7744f99bac185827231701";
+
 const rootElement = document.getElementById("root");
 
 const headingComponent = () => {
