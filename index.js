@@ -1,17 +1,24 @@
 const rootElement = document.getElementById("root");
 
-const navbarComponent = () =>
-  `<div style="padding: 12px; background-color: lightgrey;">${titleComponent()}</div>`;
+const headingComponent = () => {
+  const heading = document.createElement("h1");
+  heading.innerText = "Weather";
+  return heading;
+};
 
-const titleComponent = () =>
-  `<h1 style="font-weight: 500; font-family: sans-serif">Weather</h1>`;
-
-const aboutComponent = () => `
-  <div>
+const aboutComponent = () => {
+  const about = document.createElement("div");
+  about.id = "about";
+  about.innerHTML += `
     <h3>About</h3>
     Welcome to the weather service! Enter the name of a city for which you want to know the weather!
-  </div>
-`;
+  `;
+  const closeBtn = document.createElement("button");
+  closeBtn.addEventListener("click", () => about.remove());
+  closeBtn.innerText = "close";
+  about.append(closeBtn);
+  return about;
+};
 
-rootElement.innerHTML += navbarComponent();
-rootElement.innerHTML += aboutComponent();
+rootElement.appendChild(headingComponent());
+rootElement.appendChild(aboutComponent());
