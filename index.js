@@ -2,6 +2,7 @@ const rootElement = document.getElementById("root");
 
 const headingComponent = () => {
   const heading = document.createElement("h1");
+  heading.style = "font-family: sans-serif; font-weight: 500;"
   heading.innerText = "Weather";
   return heading;
 };
